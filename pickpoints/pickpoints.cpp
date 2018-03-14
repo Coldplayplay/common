@@ -51,8 +51,7 @@ void pp_callback(const pcl::visualization::PointPickingEvent& event, void* args)
     data->viewerPtr->removePointCloud("clicked_points");
     data->viewerPtr->addPointCloud(data->clicked_points_3d, color, "clicked_points");
     data->viewerPtr->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 10, "clicked_points");
-    //std::cout <<"["<< current_point.x << " " << current_point.y << " " << current_point.z << "] "<<std::endl;;
-    //std::cout <<"["<< current_point.r << " " << current_point.g << " " << current_point.b << "]"<<std::endl;
+    
     
 }
 

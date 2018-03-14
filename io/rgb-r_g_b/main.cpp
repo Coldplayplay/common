@@ -14,8 +14,11 @@ int main (int argc, char** argv)
     PCL_ERROR("error in reading the pcd file");
     return -1;
   }
+  cout<<"原始cloud大小："<<cloud->size()<<std::endl;
+  
   vector<int> indices;
   pcl::removeNaNFromPointCloud(*cloud,*cloud,indices);
+  std::cout<<"删除NAN的cloud大小："<<cloud->size()<<std::endl;
 
   ofstream out("xyzrgb0.txt");
   if(out.is_open())
@@ -49,17 +52,17 @@ int main (int argc, char** argv)
     out.close();
   }
 
-  unsigned long rgb = *reinterpret_cast<int*>(&cloud->points[139555].rgb);
+  unsigned long rgb = *reinterpret_cast<int*>(&cloud->points[19555].rgb);
   int r = (rgb>>16)&0x0000ff;
   int g = (rgb>>8)&0x0000ff;
   int b = (rgb)&0x0000ff;
-  PCL_INFO("第139555个点rgb是%lu",rgb);//%lu for unsigned long//这个数值搞不懂
+  PCL_INFO("第19555个点rgb是%lu",rgb);//%lu for unsigned long//这个数值搞不懂
   cout<<endl;
 
-  PCL_INFO("第139555个点r,g,b是[%d, %d, %d]",r,g,b);
+  PCL_INFO("第19555个点r,g,b是[%d, %d, %d]",r,g,b);
   cout<<endl;
 
-  PCL_INFO("第139555个点的r,g,b是[%d, %d, %d]",cloud->points[139555].r,cloud->points[139555].g,cloud->points[139555].b);
+  PCL_INFO("第19555个点的r,g,b是[%d, %d, %d]",cloud->points[19555].r,cloud->points[19555].g,cloud->points[19555].b);
   cout<<endl;
 
 
@@ -67,3 +70,4 @@ int main (int argc, char** argv)
   return 0;
 
 } 
+

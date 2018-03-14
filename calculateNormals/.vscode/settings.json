@@ -1,6 +1,10 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
-        "chrono": "cpp"
-    }
+        "chrono": "cpp",
+        "core": "cpp",
+        "numericaldiff": "cpp",
+        "iosfwd": "cpp"
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }
